@@ -3,7 +3,7 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header';
 import Nav from './components/Navbar';
-import Content from './Profile';
+import Content from './components/Profile';
 
 
 const App = () => {
