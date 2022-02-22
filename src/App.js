@@ -4,6 +4,7 @@ import './App.css';
 import Header from './components/Header/Header';
 import Nav from './components/Navbar/Navbar';
 import Content from './components/Profile/Profile';
+import Dialogs from './components/Diaologs/Dialogs';
 
 
 const App = () => {
@@ -11,7 +12,10 @@ const App = () => {
     <div className='app-wrapper'>
       <Header />
       <Nav />
-      <Content />
+      <div className='app-wrapper-content'>
+        <Dialogs />
+        {/* <Content /> */}
+      </div>
     </div>
   );
 }
