@@ -11,4 +11,5 @@
 }
 .item.active :hover{
     color: #05386B;
+    cursor: pointer;
 }
