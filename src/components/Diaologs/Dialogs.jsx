@@ -9,7 +9,7 @@ const Dialogs = (props) => {
                 <div className={classes.dialog + ' ' + classes.active}>
                     <NavLink to='/dialogs/1'>Dimych</NavLink>
                 </div>
-                <div className={classes.dialog}>
+                <div className={classes.dialog}>  
                 <NavLink to='/dialogs/2'>Zhenya</NavLink>
                 </div>
                 <div className={classes.dialog}>
