@@ -1,15 +1,19 @@
 .nav{
-    grid-area: n;
-    background-color: #8EE4AF;
+  grid-area: n;
+  background-color: #8EE4AF;
+  padding: 20px;
   }
 
 .item{
-      color: white;
-      padding: 5px;
-      padding-left: 10px;
-      font: Montserrat;
+  color: white;
 }
-.item.active :hover{
-    color: #05386B;
-    cursor: pointer;
+
+.item a{
+  text-decoration: none;
+  color: white;
 }
+
+.item a.active{
+  color: gold;
+}
+
