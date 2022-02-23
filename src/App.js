@@ -3,20 +3,25 @@ import logo from './logo.svg';
 import './App.css';
 import Header from './components/Header/Header';
 import Nav from './components/Navbar/Navbar';
-import Content from './components/Profile/Profile';
+import Profile from './components/Profile/Profile';
 import Dialogs from './components/Diaologs/Dialogs';
+import { Route, Routes } from 'react-router-dom';
 
 
 const App = () => {
   return (
+
     <div className='app-wrapper'>
       <Header />
       <Nav />
       <div className='app-wrapper-content'>
-        <Dialogs />
-        {/* <Content /> */}
+        <Routes>
+          <Route path='/Dialogs' element={<Dialogs />} />
+          <Route path='/Profile' element={<Profile />} />
+        </Routes>
       </div>
     </div>
+
   );
 }
 
