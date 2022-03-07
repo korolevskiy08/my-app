@@ -8,7 +8,7 @@ import Dialogs from './components/Diaologs/Dialogs';
 import { Route, Routes } from 'react-router-dom';
 
 
-const App = () => {
+const App = (props) => {
   return (
 
     <div className='app-wrapper'>
@@ -16,8 +16,14 @@ const App = () => {
       <Nav />
       <div className='app-wrapper-content'>
         <Routes>
-          <Route exact path='/Dialogs/*' element={<Dialogs />} />
-          <Route exact path='/Profile' element={<Profile />} />
+          
+          <Route path='/Dialogs/*' element={ <Dialogs
+            dialogsData={props.dialogsData}
+            messageData={props.messageData} />} />
+
+          <Route path='/Profile/*' element={ <Profile
+            postData={props.postData} /> } />
+
         </Routes>
       </div>
     </div>
