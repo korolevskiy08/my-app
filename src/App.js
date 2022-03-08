@@ -9,20 +9,22 @@ import { Route, Routes } from 'react-router-dom';
 
 
 const App = (props) => {
-  return (
+  
 
+
+  return (
     <div className='app-wrapper'>
       <Header />
       <Nav />
       <div className='app-wrapper-content'>
         <Routes>
-          
-          <Route path='/Dialogs/*' element={ <Dialogs
+
+          <Route path='/Dialogs/*' element={<Dialogs
             dialogsData={props.dialogsData}
             messageData={props.messageData} />} />
 
-          <Route path='/Profile/*' element={ <Profile
-            postData={props.postData} /> } />
+          <Route path='/Profile/*' element={<Profile
+          postData={props.postData} />} />
 
         </Routes>
       </div>
