@@ -7,10 +7,7 @@ import Profile from './components/Profile/Profile';
 import Dialogs from './components/Diaologs/Dialogs';
 import { Route, Routes } from 'react-router-dom';
 
-
 const App = (props) => {
-  
-
 
   return (
     <div className='app-wrapper'>
@@ -20,11 +17,10 @@ const App = (props) => {
         <Routes>
 
           <Route path='/Dialogs/*' element={<Dialogs
-            dialogsData={props.dialogsData}
-            messageData={props.messageData} />} />
+            state={props.state.dialogsPage} />} />
 
           <Route path='/Profile/*' element={<Profile
-          postData={props.postData} />} />
+          state={props.state.profilePage} />} />
 
         </Routes>
       </div>
