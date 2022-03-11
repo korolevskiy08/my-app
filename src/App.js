@@ -6,13 +6,16 @@ import Nav from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
 import Dialogs from './components/Diaologs/Dialogs';
 import { Route, Routes } from 'react-router-dom';
+import News from './components/News/News';
+import Music from './components/Music/Music';
+import Setting from './components/Setting/Setting';
 
 const App = (props) => {
-
   return (
     <div className='app-wrapper'>
       <Header />
       <Nav />
+
       <div className='app-wrapper-content'>
         <Routes>
 
@@ -20,7 +23,13 @@ const App = (props) => {
             state={props.state.dialogsPage} />} />
 
           <Route path='/Profile/*' element={<Profile
-          state={props.state.profilePage} />} />
+            state={props.state.profilePage} />} />
+
+          <Route path='/News/*' element={<News />} />
+
+          <Route path='/Music/*' element={<Music />} />
+          
+          <Route path='/Setting/*' element={<Setting />} />
 
         </Routes>
       </div>

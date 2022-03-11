@@ -1,24 +1,25 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
 import classes from './Navbar.module.css';
+const renderIsActive = navData => navData.isActive ? classes.active : classes.item
 
 const Navbar = () => {
   return (
     <nav className={classes.nav}>
       <div className = {`${classes.item}`}>
-        <NavLink to='/Profile' className={navData => navData.isActive ? classes.active : classes.item}> Profile </NavLink>
+        <NavLink to='/Profile' className={ renderIsActive }> Profile </NavLink>
       </div>
       <div className = {`${classes.item}`}>
-        <NavLink to='/Dialogs' className={navData => navData.isActive ? classes.active : classes.item}> Messages </NavLink>
+        <NavLink to='/Dialogs' className={ renderIsActive }> Messages </NavLink>
       </div>
       <div className = {`${classes.item}`}>
-        <a className={navData => navData.isActive ? classes.active : classes.item}> News </a>
+      <NavLink to='/News' className={ renderIsActive }> News </NavLink>
       </div>
       <div className = {`${classes.item}`}>
-        <a className={navData => navData.isActive ? classes.active : classes.item}> Music </a>
+      <NavLink to='/Music' className={ renderIsActive }> Music </NavLink>
       </div>
       <div className = {`${classes.item}`}>
-        <a className={navData => navData.isActive ? classes.active : classes.item}>Setting</a>
+      <NavLink to='/Setting' className={ renderIsActive }> Setting </NavLink>
       </div>
     </nav>
   )

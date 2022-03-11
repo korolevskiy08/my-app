@@ -1,4 +1,24 @@
+.wrapper{
+    
+}
 .discriptionBlock{
     padding: 10px;
 }
+.wallPaper{
+    width: 100%;
+    height: 300px;
+}
+.wallPaper img{
+    width: 100%;
+    height: 100%;
+    object-fit: fill;
+    z-index: 0;
+}
+
+.avatarProfile img{
+    border-radius: 100px;
+    width: 150px;
+    height: 150px;
+}
+
 
