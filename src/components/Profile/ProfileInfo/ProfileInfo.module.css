@@ -2,6 +2,7 @@
     
 }
 .discriptionBlock{
+    display: flex;
     padding: 10px;
 }
 .wallPaper{

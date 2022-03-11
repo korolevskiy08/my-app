@@ -11,7 +11,7 @@ const ProfileInfo = () => {
                     <div className={classes.avatarProfile}>
                     <img src='https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png' />
                     </div>
-                    ava + discription
+                    discription
                 </div>
         </div>
     )
