@@ -1,6 +1,14 @@
 .postsBlock{
     padding: 10px;
+    background-color: #8EE4AF;
 }
 .posts{
     margin-top: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+.createNewPost{
+    display: flex;
+    justify-content: center;
 }

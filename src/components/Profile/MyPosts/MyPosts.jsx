@@ -11,7 +11,7 @@ const MyPosts = (props) => {
     return (
         <div className={classes.postsBlock}>
             <h3>My post</h3>
-            <div>
+            <div className={classes.createNewPost}>
                 <div>
                     <textarea></textarea>
                 </div>

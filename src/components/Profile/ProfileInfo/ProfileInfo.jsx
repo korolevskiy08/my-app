@@ -9,9 +9,11 @@ const ProfileInfo = () => {
             </div>
                 <div className={classes.discriptionBlock}>
                     <div className={classes.avatarProfile}>
-                    <img src='https://toppng.com/uploads/preview/roger-berry-avatar-placeholder-11562991561rbrfzlng6h.png' />
+                    <img src='https://www.meme-arsenal.com/memes/d15becf94aca31bfe3492de9c9d9b5a5.jpg' />
                     </div>
+                    <div className={classes.discriptionProfile}>
                     discription
+                    </div>
                 </div>
         </div>
     )
