@@ -6,7 +6,8 @@ let state = {
             { id: 1, message: 'Hi, how are you?', likeCount: 20 },
             { id: 2, message: "It's my first post", likeCount: 15 }
         ],
-        newPostText: 'It-c.com'
+        newPostText: 'It-c.com',
+        nowPostChanging: false,
     },
     dialogsPage: {
         dialogsData: [
@@ -26,6 +27,12 @@ let state = {
     }
 }
 
+export let selectPostToChange = (i) => {
+    const selectedPost = state.profilePage.postData[i].message
+    state.profilePage.newPostText = selectedPost
+    state.profilePage.nowPostChanging = i
+    rerenderEntireTree(state)
+}   
 
 export let addPost = () => {
     let newPost = {
@@ -44,6 +51,5 @@ export let updateNewPostText = (newText) => {
     state.profilePage.newPostText = newText;
     rerenderEntireTree(state)
 }
-
 
 export default state;

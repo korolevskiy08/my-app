@@ -23,6 +23,7 @@ const App = (props) => {
             state={props.state.dialogsPage} />} />
 
           <Route path='/Profile/*' element={<Profile
+            selectPostToChange={props.selectPostToChange}
             profilePage={props.state.profilePage}
             addPost={props.addPost}
             updateNewPostText={props.updateNewPostText} />} />
