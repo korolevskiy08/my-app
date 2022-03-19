@@ -26,7 +26,7 @@ const MyPosts = (props) => {
         props.selectPostToChange(i)
     }
 
-console.log(props.newPostText)
+    console.log(props.newPostText)
     return (
         <div className={classes.postsBlock}>
             <h3>My post</h3>
@@ -35,7 +35,7 @@ console.log(props.newPostText)
                     <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
                 </div>
                 <div>
-                    {props.nowPostChanging === false ? <button onClick={addPost}> Add post </button> : <button onClick={savePostChanges}> Save </button>} <button onClick={cancelChangingPost}> Cancel </button>
+                {props.nowPostChanging === false ? <button onClick={addPost}> Add post </button> : <React.Fragment><button onClick={savePostChanges}> Save </button> <button onClick={cancelChangingPost}> Cancel </button></React.Fragment>}
                 </div>
             </div>
             <div className={classes.posts}>
