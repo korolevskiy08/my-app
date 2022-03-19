@@ -1,12 +1,14 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
+import { rerenderEntireTree } from '../../../render';
+import { savePostChanges, cancelChangingPost } from '../../../redux/state'
 
 const MyPosts = (props) => {
-    
+
     let postsElements =
-        props.postData.map((el, i) => <Post 
-        selectPostToChange={ () => selectPostToChange(i)} key={i} message={el.message} likeCount={el.likeCount} nowPostChanging={props.nowPostChanging === i} />)
+        props.postData.map((el, i) => <Post
+            selectPostToChange={() => selectPostToChange(i)} key={i} message={el.message} likeCount={el.likeCount} nowPostChanging={props.nowPostChanging === i} />)
 
     let newPostElement = React.createRef();
 
@@ -24,15 +26,16 @@ const MyPosts = (props) => {
         props.selectPostToChange(i)
     }
 
+console.log(props.newPostText)
     return (
         <div className={classes.postsBlock}>
             <h3>My post</h3>
             <div className={classes.createNewPost}>
                 <div>
-                    <textarea onChange={onPostChange} ref={ newPostElement } value={props.newPostText}/>
+                    <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
                 </div>
                 <div>
-                    <button onClick={ addPost }>Add post</button>
+                    {props.nowPostChanging === false ? <button onClick={addPost}> Add post </button> : <button onClick={savePostChanges}> Save </button>} <button onClick={cancelChangingPost}> Cancel </button>
                 </div>
             </div>
             <div className={classes.posts}>

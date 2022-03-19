@@ -6,7 +6,8 @@ let state = {
             { id: 1, message: 'Hi, how are you?', likeCount: 20 },
             { id: 2, message: "It's my first post", likeCount: 15 }
         ],
-        newPostText: 'It-c.com',
+        newPostText: "What's new?",
+        
         nowPostChanging: false,
     },
     dialogsPage: {
@@ -27,12 +28,24 @@ let state = {
     }
 }
 
-export let selectPostToChange = (i) => {
+export let cancelChangingPost = () => {
+    state.profilePage.newPostText = state.profilePage.postData[state.profilePage.nowPostChanging].message
+    rerenderEntireTree(state)
+}
+
+export let selectPostToChange = (i) => {                            // функция возвращает сообщение в textarea
     const selectedPost = state.profilePage.postData[i].message
     state.profilePage.newPostText = selectedPost
     state.profilePage.nowPostChanging = i
     rerenderEntireTree(state)
-}   
+} 
+
+export let savePostChanges = () => {
+    state.profilePage.postData[state.profilePage.nowPostChanging].message = state.profilePage.newPostText;
+    state.profilePage.nowPostChanging = false;
+    state.profilePage.newPostText = ''
+    rerenderEntireTree(state)
+}
 
 export let addPost = () => {
     let newPost = {
