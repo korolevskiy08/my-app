@@ -1,7 +1,6 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
-import { rerenderEntireTree } from '../../../render';
 import { savePostChanges, cancelChangingPost } from '../../../redux/state'
 
 const MyPosts = (props) => {

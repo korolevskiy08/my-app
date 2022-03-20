@@ -1,4 +1,6 @@
-import { rerenderEntireTree } from "../render";
+let rerenderEntireTree = () => {
+    console.log('state changed')
+}
 
 let state = {
     profilePage: {
@@ -26,6 +28,10 @@ let state = {
             { id: 5, message: 'bla bla bla' },
         ]
     }
+}
+
+export const subscribe = (observer) => {
+    rerenderEntireTree = observer;
 }
 
 export let cancelChangingPost = () => {
