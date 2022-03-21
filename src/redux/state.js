@@ -9,7 +9,7 @@ let state = {
             { id: 2, message: "It's my first post", likeCount: 15 }
         ],
         newPostText: "What's new?",
-        
+
         nowPostChanging: false,
     },
     dialogsPage: {
@@ -44,7 +44,7 @@ export let selectPostToChange = (i) => {                            // функ�
     state.profilePage.newPostText = selectedPost
     state.profilePage.nowPostChanging = i
     rerenderEntireTree(state)
-} 
+}
 
 export let savePostChanges = () => {
     state.profilePage.postData[state.profilePage.nowPostChanging].message = state.profilePage.newPostText;
@@ -60,7 +60,7 @@ export let addPost = () => {
         likeCount: 0,
     };
 
-    state.profilePage.postData.push(newPost);  
+    state.profilePage.postData.push(newPost);
     state.profilePage.newPostText = ''
     rerenderEntireTree(state)
 }
