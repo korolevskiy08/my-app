@@ -11,6 +11,8 @@ const dialogsReducer = (state, action) => {
             state.newMessageBody = '';
             state.messageData.push({ id: 6, message: body });
             return state;
+        default:
+            return state;
     }
 }
 
