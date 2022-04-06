@@ -4,16 +4,15 @@ import classes from'./Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => { 
-
     return (
         <div>
             <ProfileInfo />
             <MyPosts postData={props.profilePage.postData} 
-            newPostText={props.profilePage.newPostText}
+            newPostText = {props.profilePage.newPostText}
             updateNewPostText={props.updateNewPostText}
             selectPostToChange={props.selectPostToChange}
             nowPostChanging={props.profilePage.nowPostChanging}
-            addPost={props.addPost} />
+            dispatch={props.dispatch} />
         </div>
     )
 }
