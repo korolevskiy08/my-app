@@ -72,15 +72,6 @@ let store = {
     }
 }
 
-export let addPostActionCreator = () => ({ type: add_post });
-
-export let updateNewPostTextActionCreator = (text) =>
-    ({ type: updateNewPostText, newText: text });
-
-export let sendMessageActionCreator = () => ({ type: SAND_MESSAGE });
-
-export let updateNewMessageBodyCreator = (body) =>
-    ({ type: UPDATE_NEW_MESSAGE_BODY, body: body });
 
 export default store;
 window.store = store;
