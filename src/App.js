@@ -11,6 +11,7 @@ import Music from './components/Music/Music';
 import Setting from './components/Setting/Setting';
 
 const App = (props) => {
+  console.log(props.state.profilePage)
   return (
     <div className='app-wrapper'>
       <Header />
@@ -24,7 +25,7 @@ const App = (props) => {
             state={props.state.dialogsPage} />} />
 
           <Route path='/Profile/*' element={<Profile
-            selectPostToChange={props.selectPostToChange}
+            // selectPostToChange={props.selectPostToChange}
             profilePage={props.state.profilePage}
             dispatch={props.dispatch} />} />
 

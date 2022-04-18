@@ -1,4 +1,3 @@
-import { isContentEditable } from '@testing-library/user-event/dist/utils';
 import React from 'react';
 import classes from './Post.module.css';
 
@@ -11,7 +10,6 @@ const Post = (props) => {
             <div>
                 <span> Like {props.likeCount} </span>
             </div>
-            <button onClick={() => props.selectPostToChange()}> changing post</button>
         </div>
     )
 }

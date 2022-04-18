@@ -1,17 +1,14 @@
 import React from 'react';
 import classes from './MyPosts.module.css';
 import Post from './Post/Post';
-import store from '../../../redux/state';
-import Button from '../../button/button';
 import { updateNewPostTextActionCreator, addPostActionCreator } from '../../../redux/profile-reducer';
 
 const MyPosts = (props) => {
-
+console.log(props)
     let newPostElement = React.createRef();                     // ссылка на значение в <textarea>
 
     let postsElements =
-        props.postData.map((el, i) => <Post
-            selectPostToChange={() => selectPostToChange(i)} key={i} message={el.message} likeCount={el.likeCount} nowPostChanging={props.nowPostChanging === i} />)
+        props.postData.map((el, i) => <Post key={i} message={el.message} likeCount={el.likeCount} />)
 
     let addPost = () => {                                       // функция добавляет пост 
         props.dispatch(addPostActionCreator())
@@ -23,10 +20,6 @@ const MyPosts = (props) => {
         props.dispatch(action)                                  // изменения состояния по type 
     }
 
-    let selectPostToChange = (i) => {
-        props.selectPostToChange(i)
-    }
-
     console.log(props.newPostText)
     return (
         <div className={classes.postsBlock}>
@@ -36,7 +29,7 @@ const MyPosts = (props) => {
                     <textarea onChange={onPostChange} ref={newPostElement} value={props.newPostText} />
                 </div>
                 <div>
-                    {props.nowPostChanging === false ? <button onClick={addPost}> Add post </button> : <React.Fragment><button onClick={store.savePostChanges}> Save </button> <button onClick={store.cancelChangingPost}> Cancel </button></React.Fragment>}
+                    <button onClick={addPost}> Add post </button>
                 </div>
             </div>
             <div className={classes.posts}>

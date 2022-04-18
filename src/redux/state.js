@@ -15,8 +15,6 @@ let store = {
                 { id: 2, message: "It's my first post", likeCount: 15 }
             ],
             newPostText: "What's new?",
-
-            nowPostChanging: false,
         },
         dialogsPage: {
             dialogsData: [
@@ -44,16 +42,6 @@ let store = {
     },
     subscribe(observer) {
         this._rerenderEntireTree = observer;
-    },
-    cancelChangingPost() {
-        this._state.profilePage.newPostText = this._state.profilePage.postData[this._state.profilePage.nowPostChanging].message
-        this._rerenderEntireTree(this._state)
-    },
-    selectPostToChange(i) {                            // функция возвращает сообщение в textarea
-        const selectedPost = this._state.profilePage.postData[i].message
-        this._state.profilePage.newPostText = selectedPost
-        this._state.profilePage.nowPostChanging = i
-        this._rerenderEntireTree(this._state)
     },
     savePostChanges() {
         this._state.profilePage.postData[this._state.profilePage.nowPostChanging].message = this._state.profilePage.newPostText;

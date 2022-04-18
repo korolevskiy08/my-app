@@ -4,6 +4,8 @@ import classes from'./Profile.module.css';
 import ProfileInfo from './ProfileInfo/ProfileInfo';
 
 const Profile = (props) => { 
+    console.log(props)
+    console.log(props.profilePage)
     return (
         <div>
             <ProfileInfo />
